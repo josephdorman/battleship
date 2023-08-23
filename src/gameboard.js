@@ -20,7 +20,7 @@ export default class Gameboard {
   }
 
   placeShip (coord1, coord2) {
-    const ship = new Ship(4);
+    const ship = new Ship(1);
 
     this.board[coord1][coord2] = ship;
   }
