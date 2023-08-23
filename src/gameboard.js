@@ -3,6 +3,7 @@ import Ship from "./ship";
 export default class Gameboard {
   constructor (size) {
     this.board = this.buildGrid(size);
+    this.missed = [];
   }
 
   buildGrid (size) {
@@ -22,6 +23,16 @@ export default class Gameboard {
     const ship = new Ship(4);
 
     this.board[coord1][coord2] = ship;
+  }
+
+  receiveAttack (coord1, coord2) {
+    if (this.board[coord1][coord2] != null) {
+      this.board[coord1][coord2].hit();
+    }
+    else {
+      this.missed.push(coord1, coord2);
+    }
+
   }
 
 }
