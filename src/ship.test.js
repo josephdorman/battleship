@@ -1,7 +1,12 @@
 import Ship from "./ship";
 
-const patrolBoat = new Ship(4);
+const ship = new Ship(4);
 
 test('Initializes ship', () => {
-  expect(patrolBoat).toEqual({"hits": [], "length": 4});
+  expect(ship).toEqual({"hits": [], "length": 4});
+});
+
+test('Takes a hit', () => {
+  ship.hit(2)
+  expect(ship.hits).toEqual([2]);
 });
