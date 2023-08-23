@@ -17,11 +17,17 @@ test('Initializes gameboard', () => {
 
 test('Place ship', () => {
   gameBoard.placeShip(5, 5);
-  expect(gameBoard.board[5][5]).toEqual({"hits": [], "length": 4});
+  expect(gameBoard.board[5][5]).toEqual({"hits": [], "length": 1});
 });
 
 test('Hit ship', () => {
   gameBoard.placeShip(5, 5);
   gameBoard.receiveAttack(5, 5);
   expect(gameBoard.board[5][5].hits.length).toBe(1);
+});
+
+test('Sink ship', () => {
+  gameBoard.placeShip(5, 5);
+  gameBoard.receiveAttack(5, 5);
+  expect(gameBoard.shipSunk()).toBe(true);
 });
