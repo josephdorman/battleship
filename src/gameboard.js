@@ -4,6 +4,10 @@ export default class Gameboard {
   constructor (size) {
     this.board = this.buildGrid(size);
     this.missed = [];
+    this.fleet = {
+      patrolboat: new Ship(1),
+      battleship: new Ship(1)
+    }
   }
 
   buildGrid (size) {
@@ -20,9 +24,7 @@ export default class Gameboard {
   }
 
   placeShip (coord1, coord2) {
-    const ship = new Ship(1);
-
-    this.board[coord1][coord2] = ship;
+    this.board[coord1][coord2] = this.fleet.patrolboat;
   }
 
   receiveAttack (coord1, coord2) {
@@ -33,6 +35,14 @@ export default class Gameboard {
       this.missed.push(coord1, coord2);
     }
 
+  }
+
+  shipSunk () {
+    if (this.fleet.patrolboat.isSunk() && this.fleet.battleship.isSunk()) {
+      return true;
+    }
+
+    return false;
   }
 
 }
