@@ -22,3 +22,11 @@ test('Ship is sunk', () => {
   ship.hit(2);
   expect(ship.isSunk()).toBe(true);
 });
+
+test('Prevent hitting same location', () => {
+  ship.hit(2);
+  ship.hit(2);
+  ship.hit(2);
+  ship.hit(2);
+  expect(ship.hits.length).toBe(1);
+});
