@@ -5,6 +5,11 @@ export default class Ship {
   }
 
   hit (coord) {
+    // Prevent hitting same spot
+    if (this.hits.includes(coord)) {
+      return
+    }
+
     this.hits.push(coord);
   }
 
@@ -18,5 +23,5 @@ export default class Ship {
     return false;
   }
 
-  
+
 }
