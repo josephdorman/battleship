@@ -16,10 +16,10 @@ test('Takes a hit', () => {
 });
 
 test('Ship is sunk', () => {
+  ship.hit(1);
   ship.hit(2);
-  ship.hit(2);
-  ship.hit(2);
-  ship.hit(2);
+  ship.hit(3);
+  ship.hit(4);
   expect(ship.isSunk()).toBe(true);
 });
 
