@@ -16,7 +16,7 @@
   \********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst dom = (() => {\n\n\n  function makeGrid () {\n    const gridContainer = document.querySelector('.gameboard');\n\n    for (let i = 0; i < 100; i++) {\n      const square = document.createElement('div');\n      square.classList.add('square');\n      gridContainer.appendChild(square);\n    }\n\n  }\n\n  makeGrid();\n\n\n\n})();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dom);\n\n//# sourceURL=webpack://battleship/./src/dom.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst dom = (() => {\n\n\n  function makeGrid () {\n    const gridContainer = document.querySelector('.gameboard');\n\n    for (let i = 0; i < 10; i++) {\n      for (let h = 0; h < 10; h++) {\n        const square = document.createElement('div');\n        square.classList.add('square');\n        square.setAttribute('id', `${i}${h}`);\n        gridContainer.appendChild(square);\n      }\n    }\n\n  }\n\n  makeGrid();\n\n\n\n})();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dom);\n\n//# sourceURL=webpack://battleship/./src/dom.js?");
 
 /***/ }),
 
