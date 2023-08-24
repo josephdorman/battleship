@@ -5,8 +5,11 @@ export default class Gameboard {
     this.board = this.buildGrid(size);
     this.missed = [];
     this.fleet = {
-      patrolboat: new Ship(1),
-      battleship: new Ship(1)
+      carrier: new Ship(5),
+      battleship: new Ship(4),
+      cruiser: new Ship(3),
+      submarine: new Ship(3),
+      destroyer: new Ship(2)
     }
   }
 
@@ -25,6 +28,9 @@ export default class Gameboard {
 
   placeShip (coord1, coord2) {
     this.board[coord1][coord2] = this.fleet.patrolboat;
+    this.board[coord1][coord2+1] = this.fleet.patrolboat;
+    this.board[coord1][coord2+2] = this.fleet.patrolboat;
+    this.board[coord1][coord2+3] = this.fleet.patrolboat;
   }
 
   receiveAttack (coord1, coord2) {
