@@ -27,10 +27,28 @@ export default class Gameboard {
   }
 
   placeShip (coord1, coord2) {
-    this.board[coord1][coord2] = this.fleet.patrolboat;
-    this.board[coord1][coord2+1] = this.fleet.patrolboat;
-    this.board[coord1][coord2+2] = this.fleet.patrolboat;
-    this.board[coord1][coord2+3] = this.fleet.patrolboat;
+    this.board[2][2] = this.fleet.carrier;
+    this.board[3][2] = this.fleet.carrier;
+    this.board[4][2] = this.fleet.carrier;
+    this.board[5][2] = this.fleet.carrier;
+    this.board[6][2] = this.fleet.carrier;
+
+    this.board[coord1][coord2] = this.fleet.battleship;
+    this.board[coord1][coord2+1] = this.fleet.battleship;
+    this.board[coord1][coord2+2] = this.fleet.battleship;
+    this.board[coord1][coord2+3] = this.fleet.battleship;
+
+    this.board[9][2] = this.fleet.cruiser;
+    this.board[9][3] = this.fleet.cruiser;
+    this.board[9][4] = this.fleet.cruiser;
+
+    this.board[7][8] = this.fleet.submarine;
+    this.board[8][8] = this.fleet.submarine;
+    this.board[9][8] = this.fleet.submarine;
+
+    this.board[2][7] = this.fleet.destroyer;
+    this.board[2][8] = this.fleet.destroyer;
+
   }
 
   receiveAttack (coord1, coord2) {
@@ -43,6 +61,7 @@ export default class Gameboard {
 
   }
 
+  /*
   shipSunk () {
     if (this.fleet.patrolboat.isSunk() && this.fleet.battleship.isSunk()) {
       return true;
@@ -50,5 +69,6 @@ export default class Gameboard {
 
     return false;
   }
+  */
 
 }
