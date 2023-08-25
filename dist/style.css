@@ -22,4 +22,10 @@ body {
 
 .square {
   background-color: #1f2937;
+  color: #e5e7e9;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
