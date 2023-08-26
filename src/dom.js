@@ -49,16 +49,14 @@ const dom = (() => {
     
   }
 
-  // green: #50C878 red: #AA4A44
-
   function placeShot (coord1, coord2) {
     const shot = document.getElementById(`${coord1}${coord2}`);
 
     if (board.board[coord1][coord2] === board.fleet.carrier) {
-      shot.style.backgroundColor = '#50C878';
+      shot.style.backgroundColor = '#50C878'; // green
     }
     else {
-      shot.style.backgroundColor = '#AA4A44';
+      shot.style.backgroundColor = '#AA4A44'; // red
     }
 
     console.log(board.missed);
