@@ -66,8 +66,8 @@ export default class Gameboard {
 
   }
 
-  shipSunk () {
-    if (this.fleet.carrier.isSunk()) {
+  isGameOver () {
+    if (this.fleet.carrier.isSunk() && this.fleet.battleship.isSunk() && this.fleet.cruiser.isSunk() && this.fleet.submarine.isSunk() && this.fleet.destroyer.isSunk()) {
       return true;
     }
 

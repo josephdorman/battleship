@@ -61,7 +61,7 @@ const dom = (() => {
 
     console.log(board.missed);
     console.log(board.fleet);
-    console.log(board.shipSunk());
+    console.log(board.isGameOver());
      
   }
 
