@@ -69,7 +69,7 @@ const dom = (() => {
   makeGrid();
   showShip();
 
-  return {placeShot};
+  return {board, placeShot};
 
 })();
 
