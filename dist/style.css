@@ -24,7 +24,20 @@ body {
 
 .header {
   height: 80px;
+  width: 100%;
+  border-bottom: 3px solid var(--secondary-color);
+}
+
+.title {
+  margin-left: 20px;
   font-size: 60px;
+  font-weight: bold;
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  align-items: center;
 }
 
 .gameboard-player {
@@ -80,4 +93,8 @@ body {
 
 .square:hover {
   background-color: #171e29;
+}
+
+.footer {
+  height: 80px;
 }
