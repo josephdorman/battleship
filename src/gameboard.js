@@ -27,27 +27,27 @@ export default class Gameboard {
   }
 
   placeShip (coord1, coord2) {
-    this.board[2][2] = this.fleet.carrier;
-    this.board[3][2] = this.fleet.carrier;
-    this.board[4][2] = this.fleet.carrier;
-    this.board[5][2] = this.fleet.carrier;
-    this.board[6][2] = this.fleet.carrier;
+    this.board[1][1] = this.fleet.carrier;
+    this.board[2][1] = this.fleet.carrier;
+    this.board[3][1] = this.fleet.carrier;
+    this.board[4][1] = this.fleet.carrier;
+    this.board[5][1] = this.fleet.carrier;
 
     this.board[coord1][coord2] = this.fleet.battleship;
     this.board[coord1][coord2+1] = this.fleet.battleship;
     this.board[coord1][coord2+2] = this.fleet.battleship;
     this.board[coord1][coord2+3] = this.fleet.battleship;
 
-    this.board[9][2] = this.fleet.cruiser;
-    this.board[9][3] = this.fleet.cruiser;
-    this.board[9][4] = this.fleet.cruiser;
+    this.board[8][1] = this.fleet.cruiser;
+    this.board[8][2] = this.fleet.cruiser;
+    this.board[8][3] = this.fleet.cruiser;
 
-    this.board[7][8] = this.fleet.submarine;
-    this.board[8][8] = this.fleet.submarine;
-    this.board[9][8] = this.fleet.submarine;
+    this.board[6][7] = this.fleet.submarine;
+    this.board[7][7] = this.fleet.submarine;
+    this.board[8][7] = this.fleet.submarine;
 
-    this.board[2][7] = this.fleet.destroyer;
-    this.board[2][8] = this.fleet.destroyer;
+    this.board[1][6] = this.fleet.destroyer;
+    this.board[1][7] = this.fleet.destroyer;
 
   }
 
