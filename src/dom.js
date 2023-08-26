@@ -61,6 +61,7 @@ const dom = (() => {
       shot.style.backgroundColor = '#AA4A44';
     }
 
+    console.log(board.missed);
      
   }
 
