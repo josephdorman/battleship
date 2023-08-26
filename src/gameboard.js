@@ -53,7 +53,7 @@ export default class Gameboard {
 
   receiveAttack (coord1, coord2) {
     if (this.board[coord1][coord2] != null) {
-      this.board[coord1][coord2].hit();
+      this.board[coord1][coord2].hit(coord1, coord2);
     }
     else {
       this.missed.push(coord1, coord2);
@@ -61,14 +61,12 @@ export default class Gameboard {
 
   }
 
-  /*
   shipSunk () {
-    if (this.fleet.patrolboat.isSunk() && this.fleet.battleship.isSunk()) {
+    if (this.fleet.carrier.isSunk()) {
       return true;
     }
 
     return false;
   }
-  */
 
 }

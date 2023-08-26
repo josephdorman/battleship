@@ -62,6 +62,8 @@ const dom = (() => {
     }
 
     console.log(board.missed);
+    console.log(board.fleet);
+    console.log(board.shipSunk());
      
   }
 

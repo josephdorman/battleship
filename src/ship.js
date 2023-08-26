@@ -4,13 +4,13 @@ export default class Ship {
     this.hits = [];
   }
 
-  hit (coord) {
+  hit (coord1, coord2) {
     // Prevent hitting same spot
-    if (this.hits.includes(coord)) {
+    if (this.hits.includes(coord1 + coord2)) {
       return
     }
 
-    this.hits.push(coord);
+    this.hits.push(coord1 +coord2);
   }
 
   isSunk () {
