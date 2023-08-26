@@ -49,10 +49,27 @@ const dom = (() => {
     
   }
 
+  // green: #50C878 red: #AA4A44
+
+  function placeShot (coord) {
+    const shot = document.getElementById(`${coord}`);
+    const coord1 = coord.slice(0, 1);
+    const coord2 = coord.slice(1, 2);
+
+    if (board.board[coord1][coord2] === board.fleet.carrier) {
+      shot.style.backgroundColor = '#50C878';
+    }
+    else {
+      shot.style.backgroundColor = '#AA4A44';
+    }
+
+     
+  }
+
   makeGrid();
   showShip();
 
-
+  return {placeShot};
 
 })();
 

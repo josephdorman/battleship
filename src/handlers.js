@@ -1,8 +1,10 @@
+import dom from "./dom";
+
 const handlers = (() => {
   const squares = document.querySelectorAll('.square');
 
   function gridClickHandler (id) {
-    console.log(id);
+    dom.placeShot(id);
   }
 
  squares.forEach(square => {
