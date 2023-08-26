@@ -7,7 +7,7 @@ const dom = (() => {
 
 
   function makeGrid () {
-    const gridContainer = document.querySelector('.gameboard');
+    const gridContainer = document.querySelector('.grid');
 
     for (let i = 0; i < 10; i++) {
       for (let h = 0; h < 10; h++) {
