@@ -1,7 +1,6 @@
 import dom from "./dom";
 
 const handlers = (() => {
-  const board = dom.board;
   const squares = document.querySelectorAll('.square');
 
   function gridClickHandler (id) {
