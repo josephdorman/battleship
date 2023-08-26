@@ -53,7 +53,7 @@ const dom = (() => {
     const shot = document.getElementById(`${coord1}${coord2}`);
 
     if (board.board[coord1][coord2] === board.fleet.carrier) {
-      shot.style.backgroundColor = '#50C878'; // green
+      shot.style.backgroundColor = '#00A36C'; // green
     }
     else {
       shot.style.backgroundColor = '#AA4A44'; // red
