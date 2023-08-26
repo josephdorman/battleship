@@ -56,7 +56,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dom
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Ship)\n/* harmony export */ });\nclass Ship {\n  constructor (size) {\n    this.length = size;\n    this.hits = [];\n  }\n\n  hit (coord1, coord2) {\n    // Prevent hitting same spot\n    if (this.hits.includes(coord1 + coord2)) {\n      return\n    }\n\n    this.hits.push(coord1 +coord2);\n  }\n\n  isSunk () {\n    // Check if ship is sunk\n    if (this.hits.length >= this.length) {\n      return true;\n    }\n    \n    // Else not sunk\n    return false;\n  }\n\n\n}\n\n//# sourceURL=webpack://battleship/./src/ship.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Ship)\n/* harmony export */ });\nclass Ship {\n  constructor (size) {\n    this.length = size;\n    this.hits = [];\n  }\n\n  hit (coord1, coord2) {\n    // Prevent hitting same spot\n    if (this.hits.includes(coord1 + coord2)) {\n      return\n    }\n\n    this.hits.push(coord1 + coord2);\n  }\n\n  isSunk () {\n    // Check if ship is sunk\n    if (this.hits.length >= this.length) {\n      return true;\n    }\n    \n    // Else not sunk\n    return false;\n  }\n\n\n}\n\n//# sourceURL=webpack://battleship/./src/ship.js?");
 
 /***/ })
 

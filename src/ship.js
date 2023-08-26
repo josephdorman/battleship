@@ -10,7 +10,7 @@ export default class Ship {
       return
     }
 
-    this.hits.push(coord1 +coord2);
+    this.hits.push(coord1 + coord2);
   }
 
   isSunk () {
