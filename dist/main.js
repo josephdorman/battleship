@@ -36,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst handlers = (() => {\n  const squares = document.querySelectorAll('.squares');\n\n  function gridClickHandler (id) {\n    console.log(id);\n  }\n\n squares.forEach(square => {\n    square.addEventListener('click', gridClickHandler(square.id));\n  });\n  \n})();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (handlers);\n\n//# sourceURL=webpack://battleship/./src/handlers.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst handlers = (() => {\n  const squares = document.querySelectorAll('.square');\n\n  function gridClickHandler (id) {\n    console.log(id);\n  }\n\n squares.forEach(square => {\n    square.addEventListener('click', () => {\n      gridClickHandler(square.id)\n    });\n  });\n\n})();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (handlers);\n\n//# sourceURL=webpack://battleship/./src/handlers.js?");
 
 /***/ }),
 
