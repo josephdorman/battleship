@@ -12,9 +12,16 @@
 body {
   background-color: var(--primary-color);
   display: flex;
+  flex-direction: column;
   height: 100vh;
   justify-content: center;
   align-items: center;
+  color: var(--text-color);
+}
+
+.header {
+  height: 80px;
+  font-size: 60px;
 }
 
 .gameboard-player {
@@ -32,7 +39,6 @@ body {
 .x-coord,
 .y-coord {
   justify-self: center;
-  color: var(--text-color);
   font-size: 64px;
   font-weight: bold;
 }
@@ -62,10 +68,13 @@ body {
 
 .square {
   background-color: var(--secondary-color);
-  color: var(--text-color);
   font-weight: bold;
   font-size: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.square:hover {
+  background-color: #171e29;
 }
