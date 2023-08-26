@@ -3,7 +3,7 @@ import Gameboard from "./gameboard";
 const dom = (() => {
   const board = new Gameboard(10);
 
-  board.placeShip(5, 5);
+  board.placeShip(4, 4);
 
 
   function makeGrid () {
@@ -21,21 +21,23 @@ const dom = (() => {
   }
 
   function showShip () {
+    console.log(board.board);
+
     for (let i = 0; i < 10; i++) {
       for (let h = 0; h < 10; h++) {
-        if (board.board[i+1][h+1] != null) {
+        if (board.board[i][h] != null) {
           const square = document.getElementById(`${i}${h}`);
 
-          if (board.board[i+1][h+1] === board.fleet.carrier) {
+          if (board.board[i][h] === board.fleet.carrier) {
             square.textContent = 'Carrier';
           }
-          else if (board.board[i+1][h+1] === board.fleet.battleship) {
+          else if (board.board[i][h] === board.fleet.battleship) {
             square.textContent = 'Battleship';
           }
-          else if (board.board[i+1][h+1] === board.fleet.cruiser) {
+          else if (board.board[i][h] === board.fleet.cruiser) {
             square.textContent = 'Cruiser';
           }
-          else if (board.board[i+1][h+1] === board.fleet.submarine) {
+          else if (board.board[i][h] === board.fleet.submarine) {
             square.textContent = 'Submarine';
           }
           else {

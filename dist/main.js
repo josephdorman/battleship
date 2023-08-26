@@ -16,7 +16,7 @@
   \********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _gameboard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./gameboard */ \"./src/gameboard.js\");\n\n\nconst dom = (() => {\n  const board = new _gameboard__WEBPACK_IMPORTED_MODULE_0__[\"default\"](10);\n\n  board.placeShip(5, 5);\n\n\n  function makeGrid () {\n    const gridContainer = document.querySelector('.grid');\n\n    for (let i = 0; i < 10; i++) {\n      for (let h = 0; h < 10; h++) {\n        const square = document.createElement('div');\n        square.classList.add('square');\n        square.setAttribute('id', `${i}${h}`);\n        gridContainer.appendChild(square);\n      }\n    }\n\n  }\n\n  function showShip () {\n    for (let i = 0; i < 10; i++) {\n      for (let h = 0; h < 10; h++) {\n        if (board.board[i+1][h+1] != null) {\n          const square = document.getElementById(`${i}${h}`);\n\n          if (board.board[i+1][h+1] === board.fleet.carrier) {\n            square.textContent = 'Carrier';\n          }\n          else if (board.board[i+1][h+1] === board.fleet.battleship) {\n            square.textContent = 'Battleship';\n          }\n          else if (board.board[i+1][h+1] === board.fleet.cruiser) {\n            square.textContent = 'Cruiser';\n          }\n          else if (board.board[i+1][h+1] === board.fleet.submarine) {\n            square.textContent = 'Submarine';\n          }\n          else {\n            square.textContent = 'Destroyer';\n          }\n          \n        }\n      }\n    }\n    \n  }\n\n  makeGrid();\n  showShip();\n\n\n\n})();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dom);\n\n//# sourceURL=webpack://battleship/./src/dom.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _gameboard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./gameboard */ \"./src/gameboard.js\");\n\n\nconst dom = (() => {\n  const board = new _gameboard__WEBPACK_IMPORTED_MODULE_0__[\"default\"](10);\n\n  board.placeShip(4, 4);\n\n\n  function makeGrid () {\n    const gridContainer = document.querySelector('.grid');\n\n    for (let i = 0; i < 10; i++) {\n      for (let h = 0; h < 10; h++) {\n        const square = document.createElement('div');\n        square.classList.add('square');\n        square.setAttribute('id', `${i}${h}`);\n        gridContainer.appendChild(square);\n      }\n    }\n\n  }\n\n  function showShip () {\n    console.log(board.board);\n\n    for (let i = 0; i < 10; i++) {\n      for (let h = 0; h < 10; h++) {\n        if (board.board[i][h] != null) {\n          const square = document.getElementById(`${i}${h}`);\n\n          if (board.board[i][h] === board.fleet.carrier) {\n            square.textContent = 'Carrier';\n          }\n          else if (board.board[i][h] === board.fleet.battleship) {\n            square.textContent = 'Battleship';\n          }\n          else if (board.board[i][h] === board.fleet.cruiser) {\n            square.textContent = 'Cruiser';\n          }\n          else if (board.board[i][h] === board.fleet.submarine) {\n            square.textContent = 'Submarine';\n          }\n          else {\n            square.textContent = 'Destroyer';\n          }\n          \n        }\n      }\n    }\n    \n  }\n\n  makeGrid();\n  showShip();\n\n\n\n})();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dom);\n\n//# sourceURL=webpack://battleship/./src/dom.js?");
 
 /***/ }),
 
@@ -30,13 +30,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/handlers.js":
+/*!*************************!*\
+  !*** ./src/handlers.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst handlers = (() => {\n  const squares = document.querySelectorAll('.squares');\n\n  function gridClickHandler (id) {\n    console.log(id);\n  }\n\n squares.forEach(square => {\n    square.addEventListener('click', gridClickHandler(square.id));\n  });\n  \n})();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (handlers);\n\n//# sourceURL=webpack://battleship/./src/handlers.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom */ \"./src/dom.js\");\n\n\n(0,_dom__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n\n//# sourceURL=webpack://battleship/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom */ \"./src/dom.js\");\n/* harmony import */ var _handlers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./handlers */ \"./src/handlers.js\");\n\n\n\n(0,_dom__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n(0,_handlers__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\n//# sourceURL=webpack://battleship/./src/index.js?");
 
 /***/ }),
 
