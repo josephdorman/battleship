@@ -52,11 +52,16 @@ export default class Gameboard {
   }
 
   receiveAttack (coord1, coord2) {
+    // Check if attack hit a ship
     if (this.board[coord1][coord2] != null) {
       this.board[coord1][coord2].hit(coord1, coord2);
     }
+    // Prevent hitting the same missed shot
+    else if (this.missed.includes(coord1 + coord2)) {
+      /* empty */ 
+    } // Else keep track of missed shot
     else {
-      this.missed.push(coord1, coord2);
+      this.missed.push(coord1 + coord2);
     }
 
   }
