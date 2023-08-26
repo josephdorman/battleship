@@ -52,7 +52,7 @@ const dom = (() => {
   function placeShot (coord1, coord2) {
     const shot = document.getElementById(`${coord1}${coord2}`);
 
-    if (board.board[coord1][coord2] === board.fleet.carrier) {
+    if (board.board[coord1][coord2] !== null) {
       shot.style.backgroundColor = '#00A36C'; // green
     }
     else {
