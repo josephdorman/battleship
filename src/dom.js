@@ -1,4 +1,3 @@
-import Gameboard from "./gameboard";
 import player from "./player";
 
 const dom = (() => {
