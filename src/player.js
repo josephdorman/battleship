@@ -2,6 +2,7 @@ import Gameboard from "./gameboard";
 
 const player = (() => {
   const board = new Gameboard(10);
+  board.placeShip(4, 4);
   let name = '';
 
   function setName (playerName) {

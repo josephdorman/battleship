@@ -1,10 +1,8 @@
 import Gameboard from "./gameboard";
+import player from "./player";
 
 const dom = (() => {
-  const board = new Gameboard(10);
-
-  board.placeShip(4, 4);
-
+  const board = player.board;
 
   function makeGrid () {
     const gridContainerPlayer = document.querySelector('.grid-player');
