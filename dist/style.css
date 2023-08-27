@@ -37,6 +37,7 @@ body {
 .body {
   display: flex;
   flex: 1;
+  gap: 50px;
   align-items: center;
 }
 
