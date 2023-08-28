@@ -1,7 +1,9 @@
 import player from "./player";
+import ai from "./ai";
 
 const dom = (() => {
-  const board = player.board;
+  const playerBoard = player.board;
+  const aiBoard = ai.board;
 
   function makeGrid () {
     const gridContainerPlayer = document.querySelector('.grid-player');
@@ -12,7 +14,7 @@ const dom = (() => {
       for (let h = 0; h < 10; h++) {
         const square = document.createElement('div');
         square.classList.add('square');
-        square.setAttribute('id', `${i}${h}`);
+        square.setAttribute('pid', `${i}${h}`);
         gridContainerPlayer.appendChild(square);
       }
     }
@@ -22,7 +24,7 @@ const dom = (() => {
       for (let h = 0; h < 10; h++) {
         const square = document.createElement('div');
         square.classList.add('square');
-        square.setAttribute('id', `${i}${h}`);
+        square.setAttribute('aiid', `${i}${h}`);
         gridContainerComputer.appendChild(square);
       }
     }
@@ -33,19 +35,19 @@ const dom = (() => {
 
     for (let i = 0; i < 10; i++) {
       for (let h = 0; h < 10; h++) {
-        if (board.board[i][h] != null) {
-          const square = document.getElementById(`${i}${h}`);
+        if (playerBoard.board[i][h] != null) {
+          const square = document.querySelector(`[pid='${i}${h}']`);
 
-          if (board.board[i][h] === board.fleet.carrier) {
+          if (playerBoard.board[i][h] === playerBoard.fleet.carrier) {
             square.textContent = 'Carrier';
           }
-          else if (board.board[i][h] === board.fleet.battleship) {
+          else if (playerBoard.board[i][h] === playerBoard.fleet.battleship) {
             square.textContent = 'Battleship';
           }
-          else if (board.board[i][h] === board.fleet.cruiser) {
+          else if (playerBoard.board[i][h] === playerBoard.fleet.cruiser) {
             square.textContent = 'Cruiser';
           }
-          else if (board.board[i][h] === board.fleet.submarine) {
+          else if (playerBoard.board[i][h] === playerBoard.fleet.submarine) {
             square.textContent = 'Submarine';
           }
           else {
@@ -59,25 +61,25 @@ const dom = (() => {
   }
 
   function placeShot (coord1, coord2) {
-    const shot = document.getElementById(`${coord1}${coord2}`);
+    const shot = document.querySelector(`[aiid='${coord1}${coord2}']`);
 
-    if (board.board[coord1][coord2] !== null) {
+    if (aiBoard.board[coord1][coord2] !== null) {
       shot.style.backgroundColor = '#00A36C'; // green
     }
     else {
       shot.style.backgroundColor = '#AA4A44'; // red
     }
 
-    console.log(board.missed);
-    console.log(board.fleet);
-    console.log(board.isGameOver());
+    console.log(aiBoard.missed);
+    console.log(aiBoard.fleet);
+    console.log(aiBoard.isGameOver());
      
   }
 
   makeGrid();
   showShip();
 
-  return {board, placeShot};
+  return {playerBoard, aiBoard, placeShot};
 
 })();
 
