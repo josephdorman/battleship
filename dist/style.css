@@ -37,7 +37,7 @@ body {
 .body {
   display: flex;
   flex: 1;
-  gap: 50px;
+  gap: 250px;
   align-items: center;
 }
 
@@ -56,6 +56,8 @@ body {
   display: grid;
   grid-template-columns: 75px 1fr;
   grid-template-rows: 75px 1fr;
+  height: 100%;
+  width: 100%;
 }
 
 .x-axis,
@@ -72,13 +74,13 @@ body {
 }
 
 .x-axis {
-  grid-template-columns: repeat(10, 75px);
+  grid-template-columns: repeat(10, 65px);
   grid-column: 2;
   grid-row: 1;
 }
 
 .y-axis {
-  grid-template-rows: repeat(10, 75px);
+  grid-template-rows: repeat(10, 65px);
   grid-column: 1;
   grid-row: 2;
 }
@@ -90,15 +92,13 @@ body {
   grid-template-rows: repeat(10, 1fr);
   grid-column: 2 / 2;
   grid-row: 2 / 2;
-  height: 750px;
-  width: 750px;
   gap: 5px;
 }
 
 .square {
   background-color: var(--secondary-color);
   font-weight: bold;
-  font-size: 14px;
+  font-size: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
