@@ -6,7 +6,13 @@ const player = (() => {
   let name = '';
 
   function setName (playerName) {
+    if (playerName === '') {
+      return false;
+    }
+    
     name = playerName;
+    
+    return true;
   }
 
   function getName () {

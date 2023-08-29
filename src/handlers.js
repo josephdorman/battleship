@@ -15,7 +15,15 @@ const handlers = (() => {
   }
 
   function formClickHandler (value) {
-    player.setName(value);
+    if (player.setName(value) === false) {
+      dom.nameError();
+    }
+    else {
+      dom.closeModal();
+      dom.showName(value);
+    }
+    
+    
   }
 
  squares.forEach(square => {

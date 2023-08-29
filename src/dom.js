@@ -2,6 +2,9 @@ import player from "./player";
 import ai from "./ai";
 
 const dom = (() => {
+  const modal = document.querySelector('.modal');
+  const playerName = document.querySelector('.player-name');
+  const nameInput = document.getElementById('name');
   const playerBoard = player.board;
   const aiBoard = ai.board;
 
@@ -76,10 +79,22 @@ const dom = (() => {
      
   }
 
+  function showName (value) {
+    playerName.textContent = `${value}s Waters`;
+  }
+
+  function nameError () {
+    nameInput.style.border = '1px solid #AA4A44'
+  }
+
+  function closeModal () {
+    modal.style.display = 'none';
+  }
+
   makeGrid();
   showShip();
 
-  return {playerBoard, aiBoard, placeShot};
+  return {playerBoard, aiBoard, placeShot, closeModal, showName, nameError};
 
 })();
 
