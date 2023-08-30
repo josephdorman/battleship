@@ -36,9 +36,43 @@ body {
 
 .body {
   display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  margin-top: 50px;
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.info::after {
+  display: show;
+  content: 'Press R to rotate';
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  display: flex;
   flex: 1;
   gap: 250px;
   align-items: center;
+}
+
+.computer {
+  display: none;
 }
 
 .player-name,
@@ -113,8 +147,7 @@ body {
 }
 
 .modal {
-  display: show;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: fixed; /* Stay in place */
