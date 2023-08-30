@@ -60,7 +60,7 @@ body {
 
 .btn-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -195,7 +195,6 @@ input {
 }
 
 button {
-  font-size: 20px;
   font-weight: bold;
   padding: 10px 20px;
   background-color: #00A36C;
@@ -206,4 +205,12 @@ button {
 
 button:hover {
   background-color: #037e55;
+}
+
+.play {
+  font-size: 20px;
+}
+
+.ship-btn {
+  font-size: 16px;
 }
