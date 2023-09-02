@@ -26,7 +26,27 @@ export default class Gameboard {
     return arr;
   }
 
+  isPlacementValid (coord1, coord2) {
+    let placement = [];
+
+    for (let i = 0; i < 4; i++) {
+      const coord = coord2 + i;
+      placement.push(coord1.toString() + coord.toString());
+    }
+
+    console.log(placement);
+
+    if (placement.some(v => v > 100) || placement.includes('010')) {
+      return ('invalid');
+    }
+
+    return ('valid');
+
+  }
+
   placeShip (coord1, coord2) {
+    console.log(this.isPlacementValid(coord1, coord2));
+
     this.board[1][1] = this.fleet.carrier;
     this.board[2][1] = this.fleet.carrier;
     this.board[3][1] = this.fleet.carrier;
