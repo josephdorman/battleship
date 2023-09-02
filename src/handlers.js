@@ -23,8 +23,9 @@ const handlers = (() => {
       dom.showName(value);
     }
     
-    
   }
+
+
 
  squares.forEach(square => {
     square.addEventListener('click', (e) => {
@@ -32,9 +33,9 @@ const handlers = (() => {
     });
   });
 
-formSubmit.addEventListener('click', () => {
-  formClickHandler(name.value);
-});
+  formSubmit.addEventListener('click', () => {
+    formClickHandler(name.value);
+  });
 
 })();
 
