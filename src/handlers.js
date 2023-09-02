@@ -30,11 +30,11 @@ const handlers = (() => {
     console.log(id);
   }
 
-placementBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    shipPlacementClickHandler(btn.id);
+  placementBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      shipPlacementClickHandler(btn.id);
+    });
   });
-});
 
  squares.forEach(square => {
     square.addEventListener('click', (e) => {
