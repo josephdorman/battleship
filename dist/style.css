@@ -45,9 +45,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px;
-  margin-top: 50px;
-  font-size: 38px;
+  padding: 30px;
+  font-size: 32px;
   font-weight: bold;
 }
 
@@ -80,7 +79,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 34px;
+  font-size: 28px;
   font-weight: bold;
   height: 60px;
 }
@@ -88,8 +87,8 @@ body {
 .gameboard-player,
 .gameboard-computer {
   display: grid;
-  grid-template-columns: 75px 1fr;
-  grid-template-rows: 75px 1fr;
+  grid-template-columns: 50px 1fr;
+  grid-template-rows: 50px 1fr;
   height: 100%;
   width: 100%;
 }
@@ -103,18 +102,19 @@ body {
 .x-coord,
 .y-coord {
   justify-self: center;
-  font-size: 64px;
+  align-self: center;
+  font-size: 40px;
   font-weight: bold;
 }
 
 .x-axis {
-  grid-template-columns: repeat(10, 65px);
+  grid-template-columns: repeat(10, 50px);
   grid-column: 2;
   grid-row: 1;
 }
 
 .y-axis {
-  grid-template-rows: repeat(10, 65px);
+  grid-template-rows: repeat(10, 50px);
   grid-column: 1;
   grid-row: 2;
 }
@@ -132,7 +132,7 @@ body {
 .square {
   background-color: var(--secondary-color);
   font-weight: bold;
-  font-size: 12px;
+  font-size: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -212,5 +212,5 @@ button:hover {
 }
 
 .ship-btn {
-  font-size: 16px;
+  font-size: 12px;
 }
