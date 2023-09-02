@@ -6,6 +6,7 @@ const handlers = (() => {
   const squares = aiGrid.querySelectorAll('.square');
   const formSubmit = document.getElementById('modal-submit');
   const name = document.getElementById('name');
+  const placementBtns = document.querySelectorAll('.ship-btn');
 
   function gridClickHandler (id) {
     const coord1 = id.slice(0, 1);
@@ -25,7 +26,15 @@ const handlers = (() => {
     
   }
 
+  function shipPlacementClickHandler (id) {
+    console.log(id);
+  }
 
+placementBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    shipPlacementClickHandler(btn.id);
+  });
+});
 
  squares.forEach(square => {
     square.addEventListener('click', (e) => {
