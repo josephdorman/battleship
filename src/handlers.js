@@ -2,8 +2,10 @@ import dom from "./dom";
 import player from "./player";
 
 const handlers = (() => {
-  const aiGrid = document.querySelector('.grid-computer')
-  const squares = aiGrid.querySelectorAll('.square');
+  const aiGrid = document.querySelector('.grid-computer');
+  const aiSquares = aiGrid.querySelectorAll('.square');
+  const playerGrid = document.querySelector('.grid-player');
+  const playerSquares = playerGrid.querySelectorAll('.square');
   const formSubmit = document.getElementById('modal-submit');
   const name = document.getElementById('name');
   const placementBtns = document.querySelectorAll('.ship-btn');
@@ -36,7 +38,13 @@ const handlers = (() => {
     });
   });
 
- squares.forEach(square => {
+  playerSquares.forEach(square => {
+    square.addEventListener('click', (e) => {
+      gridClickHandler(e.target.attributes.pid.value);
+    });
+  });
+
+ aiSquares.forEach(square => {
     square.addEventListener('click', (e) => {
       gridClickHandler(e.target.attributes.aiid.value);
     });
