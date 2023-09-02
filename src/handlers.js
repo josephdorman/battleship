@@ -6,7 +6,7 @@ const handlers = (() => {
   const aiSquares = aiGrid.querySelectorAll('.square');
   const playerGrid = document.querySelector('.grid-player');
   const playerSquares = playerGrid.querySelectorAll('.square');
-  const formSubmit = document.getElementById('modal-submit');
+  const formSubmit = document.getElementById('play');
   const name = document.getElementById('name');
   const placementBtns = document.querySelectorAll('.ship-btn');
 
