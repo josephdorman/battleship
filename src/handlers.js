@@ -41,6 +41,7 @@ const handlers = (() => {
 
     player.board.placeShip(shipID, rot, coord1, coord2);
     dom.showShip();
+    console.log(player.board);
 
   }
 
@@ -78,7 +79,6 @@ const handlers = (() => {
 
   document.addEventListener('keypress', (e) => {
     if (e.key === 'r') {
-      console.log(e.key);
       changeRot();
     }
   })
