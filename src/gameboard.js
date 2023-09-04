@@ -26,23 +26,21 @@ export default class Gameboard {
     return arr;
   }
 
-  isPlacementValid (rot, coord1, coord2) {
+  isPlacementValid (ship, rot, coord1, coord2) {
     let placement = [];
 
     if (rot === 'hor') {
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < ship.length; i++) {
         const coord = coord2 + i;
         placement.push(coord1.toString() + coord.toString());
       }
     }
     else {
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < ship.length; i++) {
         const coord = coord1 + i;
         placement.push(coord.toString() + coord2.toString());
       }
     }
-
-    console.log(placement);
 
     if (placement.some(v => v > 100) || placement.includes('010')) {
       return false;
@@ -56,41 +54,40 @@ export default class Gameboard {
   }
 
   shipPlacementLoop (ship, rot, coord1, coord2) {
-    if (rot === 'hor') {
-      for (let i = 0; i < ship.length; i++) {
-        this.board[coord1][coord2 + i] = ship;
-      }
-    }
-    else {
-      for (let i = 0; i < ship.length; i++) {
-        this.board[coord1 + i][coord2] = ship;
-      }
-    }
-    
-  }
-
-  placeShip (ship, rot, coord1, coord2) {
-    if (this.isPlacementValid(rot, coord1, coord2)) {
-      if (ship === 'carrier') {
-        this.shipPlacementLoop(this.fleet.carrier, rot, coord1, coord2);
-      }
-      else if (ship === 'battleship') {
-        this.shipPlacementLoop(this.fleet.battleship, rot, coord1, coord2);
-      }
-      else if (ship === 'cruiser') {
-        this.shipPlacementLoop(this.fleet.cruiser, rot, coord1, coord2);
-      }
-      else if (ship === 'submarine') {
-        this.shipPlacementLoop(this.fleet.submarine, rot, coord1, coord2);
+    if (this.isPlacementValid(ship, rot, coord1, coord2)) {
+      if (rot === 'hor') {
+        for (let i = 0; i < ship.length; i++) {
+          this.board[coord1][coord2 + i] = ship;
+        }
       }
       else {
-        this.shipPlacementLoop(this.fleet.destroyer, rot, coord1, coord2);
+        for (let i = 0; i < ship.length; i++) {
+          this.board[coord1 + i][coord2] = ship;
+        }
       }
     }
     else {
       console.log('Ship placement is not valid');
     }
+    
+  }
 
+  placeShip (ship, rot, coord1, coord2) {
+    if (ship === 'carrier') {
+      this.shipPlacementLoop(this.fleet.carrier, rot, coord1, coord2);
+    }
+    else if (ship === 'battleship') {
+      this.shipPlacementLoop(this.fleet.battleship, rot, coord1, coord2);
+    }
+    else if (ship === 'cruiser') {
+      this.shipPlacementLoop(this.fleet.cruiser, rot, coord1, coord2);
+    }
+    else if (ship === 'submarine') {
+      this.shipPlacementLoop(this.fleet.submarine, rot, coord1, coord2);
+    }
+    else {
+      this.shipPlacementLoop(this.fleet.destroyer, rot, coord1, coord2);
+    }
   }
 
   receiveAttack (coord1, coord2) {
