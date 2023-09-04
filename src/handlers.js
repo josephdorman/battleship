@@ -32,16 +32,19 @@ const handlers = (() => {
   }
 
   function placeShipClickHandler (id) {
-    const coord1 = Number(id.slice(0, 1));
-    const coord2 = Number(id.slice(1, 2));
-
     if (shipID === '') {
       return console.log('No ship selected');
     }
 
+    const coord1 = Number(id.slice(0, 1));
+    const coord2 = Number(id.slice(1, 2));
+
+    const ship = document.getElementById(`${shipID}`);
+    ship.disabled = true;
+
     player.board.placeShip(shipID, rot, coord1, coord2);
     dom.showShip();
-    console.log(player.board);
+    shipID = '';
 
   }
 
