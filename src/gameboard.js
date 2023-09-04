@@ -44,29 +44,38 @@ export default class Gameboard {
 
   }
 
-  shipPlacementLoop (ship, coord1, coord2) {
-    for (let i = 0; i < ship.length; i++) {
-      this.board[coord1][coord2 + i] = ship;
+  shipPlacementLoop (ship, rot, coord1, coord2) {
+    console.log(rot);
+    if (rot === 'hor') {
+      for (let i = 0; i < ship.length; i++) {
+        this.board[coord1][coord2 + i] = ship;
+      }
     }
+    else {
+      for (let i = 0; i < ship.length; i++) {
+        this.board[coord1 + i][coord2] = ship;
+      }
+    }
+    
   }
 
   placeShip (ship, rot, coord1, coord2) {
     // console.log(this.isPlacementValid(coord1, coord2));
     
     if (ship === 'carrier') {
-      this.shipPlacementLoop(this.fleet.carrier, coord1, coord2);
+      this.shipPlacementLoop(this.fleet.carrier, rot, coord1, coord2);
     }
     else if (ship === 'battleship') {
-      this.shipPlacementLoop(this.fleet.battleship, coord1, coord2);
+      this.shipPlacementLoop(this.fleet.battleship, rot, coord1, coord2);
     }
     else if (ship === 'cruiser') {
-      this.shipPlacementLoop(this.fleet.cruiser, coord1, coord2);
+      this.shipPlacementLoop(this.fleet.cruiser, rot, coord1, coord2);
     }
     else if (ship === 'submarine') {
-      this.shipPlacementLoop(this.fleet.submarine, coord1, coord2);
+      this.shipPlacementLoop(this.fleet.submarine, rot, coord1, coord2);
     }
     else {
-      this.shipPlacementLoop(this.fleet.destroyer, coord1, coord2);
+      this.shipPlacementLoop(this.fleet.destroyer, rot, coord1, coord2);
     }
     
 

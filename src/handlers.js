@@ -11,6 +11,7 @@ const handlers = (() => {
   const placementBtns = document.querySelectorAll('.ship-btn');
 
   let shipID = '';
+  let rot = 'hor';
 
   function gridClickHandler (id) {
     const coord1 = id.slice(0, 1);
@@ -38,9 +39,19 @@ const handlers = (() => {
       return console.log('No ship selected');
     }
 
-    player.board.placeShip(shipID, 'hor', coord1, coord2);
+    player.board.placeShip(shipID, rot, coord1, coord2);
     dom.showShip();
 
+  }
+
+  function changeRot () {
+    if (rot === 'hor') {
+      rot = 'ver';
+    }
+    else {
+      rot = 'hor';
+    }
+    
   }
 
   placementBtns.forEach(btn => {
@@ -64,6 +75,13 @@ const handlers = (() => {
   formSubmit.addEventListener('click', () => {
     formClickHandler(name.value);
   });
+
+  document.addEventListener('keypress', (e) => {
+    if (e.key === 'r') {
+      console.log(e.key);
+      changeRot();
+    }
+  })
 
 })();
 
