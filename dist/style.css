@@ -214,3 +214,7 @@ button:hover {
 .ship-btn {
   font-size: 12px;
 }
+
+.ship-btn:disabled {
+  background-color: #AA4A44;
+}
