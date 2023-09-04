@@ -38,17 +38,20 @@ export default class Gameboard {
     else {
       for (let i = 0; i < 4; i++) {
         const coord = coord1 + i;
-        placement.push(coord1.toString() + coord.toString());
+        placement.push(coord.toString() + coord2.toString());
       }
     }
 
-    
+    console.log(placement);
 
     if (placement.some(v => v > 100) || placement.includes('010')) {
-      return (false);
+      return false;
     }
-
-    return (true);
+    if (placement.find(coord => this.board[Number(coord[0].split(0,1))][Number(coord[1].split(0,1))] !== null)) {
+      return false;
+    }
+    
+    return true;
 
   }
 
@@ -88,8 +91,6 @@ export default class Gameboard {
     else {
       console.log('Ship placement is not valid');
     }
-    
-    
 
   }
 
