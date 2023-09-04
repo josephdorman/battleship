@@ -56,7 +56,6 @@ export default class Gameboard {
   }
 
   shipPlacementLoop (ship, rot, coord1, coord2) {
-    console.log(rot);
     if (rot === 'hor') {
       for (let i = 0; i < ship.length; i++) {
         this.board[coord1][coord2 + i] = ship;
