@@ -94,7 +94,7 @@ const dom = (() => {
   makeGrid();
   showShip();
 
-  return {playerBoard, aiBoard, placeShot, closeModal, showName, nameError};
+  return {playerBoard, aiBoard, placeShot, closeModal, showName, nameError, showShip};
 
 })();
 

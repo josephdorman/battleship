@@ -10,6 +10,8 @@ const handlers = (() => {
   const name = document.getElementById('name');
   const placementBtns = document.querySelectorAll('.ship-btn');
 
+  let shipID = '';
+
   function gridClickHandler (id) {
     const coord1 = id.slice(0, 1);
     const coord2 = id.slice(1, 2);
@@ -28,19 +30,28 @@ const handlers = (() => {
     
   }
 
-  function shipPlacementClickHandler (id) {
-    console.log(id);
+  function placeShipClickHandler (id) {
+    const coord1 = Number(id.slice(0, 1));
+    const coord2 = Number(id.slice(1, 2));
+
+    if (shipID === '') {
+      return console.log('No ship selected');
+    }
+
+    player.board.placeShip(shipID, 'hor', coord1, coord2);
+    dom.showShip();
+
   }
 
   placementBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      shipPlacementClickHandler(btn.id);
+      shipID = btn.id;
     });
   });
 
   playerSquares.forEach(square => {
     square.addEventListener('click', (e) => {
-      gridClickHandler(e.target.attributes.pid.value);
+      placeShipClickHandler(e.target.attributes.pid.value);
     });
   });
 
