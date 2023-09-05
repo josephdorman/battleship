@@ -5,6 +5,8 @@ const dom = (() => {
   const modal = document.querySelector('.modal');
   const playerName = document.querySelector('.player-name');
   const nameInput = document.getElementById('name');
+  const btnContainer = document.querySelector('.btn-container');
+  const info = document.querySelector('.info');
   const playerBoard = player.board;
   const aiBoard = ai.board;
 
@@ -89,6 +91,8 @@ const dom = (() => {
 
   function loadShipPlacement () {
     modal.style.display = 'none';
+    btnContainer.style.display = 'flex';
+    info.classList.add('guide');
   }
 
   makeGrid();
