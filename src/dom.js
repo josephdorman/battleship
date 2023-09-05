@@ -87,14 +87,14 @@ const dom = (() => {
     nameInput.style.border = '1px solid #AA4A44'
   }
 
-  function closeModal () {
+  function loadShipPlacement () {
     modal.style.display = 'none';
   }
 
   makeGrid();
   showShip();
 
-  return {playerBoard, aiBoard, placeShot, closeModal, showName, nameError, showShip};
+  return {playerBoard, aiBoard, placeShot, loadShipPlacement, showName, nameError, showShip};
 
 })();
 

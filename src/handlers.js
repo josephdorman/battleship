@@ -25,7 +25,7 @@ const handlers = (() => {
       dom.nameError();
     }
     else {
-      dom.closeModal();
+      dom.loadShipPlacement();
       dom.showName(value);
     }
     
