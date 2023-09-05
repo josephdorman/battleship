@@ -59,12 +59,13 @@ body {
 
 .container {
   display: flex;
-  gap: 250px;
+  gap: 200px;
   align-items: center;
 }
 
 .computer {
   display: none;
+  flex-direction: column;
 }
 
 .player-name,
