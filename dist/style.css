@@ -50,8 +50,8 @@ body {
   font-weight: bold;
 }
 
-.info::after {
-  display: none; /* swaps to show when placing ships */
+.guide::after {
+  display: flex;
   content: 'Press R to rotate';
   font-size: 18px;
   font-weight: 400;
