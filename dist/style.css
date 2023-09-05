@@ -45,27 +45,20 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  padding: 30px 30px 30px 30px;
   font-size: 32px;
   font-weight: bold;
 }
 
 .info::after {
-  display: show;
+  display: none; /* swaps to show when placing ships */
   content: 'Press R to rotate';
   font-size: 18px;
   font-weight: 400;
 }
 
-.btn-container {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
 .container {
   display: flex;
-  flex: 1;
   gap: 250px;
   align-items: center;
 }
@@ -147,7 +140,7 @@ body {
 }
 
 .modal {
-  display: none;
+  display: flex; /* hide when form is submited */
   justify-content: center;
   align-items: center;
   position: fixed; /* Stay in place */
@@ -209,6 +202,12 @@ button:hover {
 
 .play {
   font-size: 20px;
+}
+
+.btn-container {
+  display: none;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .ship-btn {
