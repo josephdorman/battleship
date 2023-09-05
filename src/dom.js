@@ -7,6 +7,7 @@ const dom = (() => {
   const nameInput = document.getElementById('name');
   const btnContainer = document.querySelector('.btn-container');
   const info = document.querySelector('.info');
+  const computerBoard = document.querySelector('.computer');
   const playerBoard = player.board;
   const aiBoard = ai.board;
 
@@ -95,10 +96,16 @@ const dom = (() => {
     info.classList.add('guide');
   }
 
+  function loadGameStart () {
+    btnContainer.style.display = 'none';
+    info.classList.remove('guide');
+    computerBoard.style.display = 'flex';
+  }
+
   makeGrid();
   showShip();
 
-  return {playerBoard, aiBoard, placeShot, loadShipPlacement, showName, nameError, showShip};
+  return {playerBoard, aiBoard, placeShot, loadShipPlacement, showName, nameError, showShip, loadGameStart};
 
 })();
 

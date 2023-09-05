@@ -4,6 +4,7 @@ export default class Gameboard {
   constructor (size) {
     this.board = this.buildGrid(size);
     this.missed = [];
+    this.amtPlaced = 0;
     this.fleet = {
       carrier: new Ship(5),
       battleship: new Ship(4),
@@ -65,6 +66,8 @@ export default class Gameboard {
           this.board[coord1 + i][coord2] = ship;
         }
       }
+
+      this.amtPlaced++;
     }
     else {
       console.log('Ship placement is not valid');

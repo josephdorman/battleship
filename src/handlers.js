@@ -32,6 +32,8 @@ const handlers = (() => {
   }
 
   function placeShipClickHandler (id) {
+    console.log(player.board.amtPlaced);
+
     if (shipID === '') {
       return console.log('No ship selected');
     }
@@ -45,6 +47,11 @@ const handlers = (() => {
     player.board.placeShip(shipID, rot, coord1, coord2);
     dom.showShip();
     shipID = '';
+
+    if (player.board.amtPlaced === 5) {
+      console.log('all ships placed');
+      dom.loadGameStart();
+    }
 
   }
 
