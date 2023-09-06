@@ -24,6 +24,14 @@ const handlers = (() => {
     const coord4 = aiShot.slice(1, 2);
     player.board.receiveAttack(coord3, coord4);
     dom.placeShotPlayer(coord3, coord4);
+
+    if (player.board.isGameOver()) {
+      dom.showWinner('computer');
+    }
+    else if (ai.board.isGameOver()) {
+      dom.showWinner('player');
+    }
+
   }
 
   function formClickHandler (value) {

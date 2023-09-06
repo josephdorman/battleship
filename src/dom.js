@@ -90,6 +90,15 @@ const dom = (() => {
      
   }
 
+  function showWinner (winner) {
+    if (winner === 'player') {
+      info.textContent = 'You Win'
+    }
+    else {
+      info.textContent = 'You Lose'
+    }
+  }
+
   function showName (value) {
     playerName.textContent = `${value}s Waters`;
   }
@@ -113,7 +122,7 @@ const dom = (() => {
   makeGrid();
   showShip();
 
-  return {playerBoard, aiBoard, placeShot, loadShipPlacement, showName, nameError, showShip, loadGameStart, placeShotPlayer};
+  return {playerBoard, aiBoard, placeShot, loadShipPlacement, showName, nameError, showShip, loadGameStart, placeShotPlayer, showWinner};
 
 })();
 
