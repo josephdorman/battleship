@@ -25,20 +25,16 @@ const ai = (() => {
 
   function pickShot () {
     const randomNum = Math.floor(Math.random() * possibleShots.length);
-    currentShots.push(possibleShots[randomNum]);
+    const value = possibleShots[randomNum];
+    currentShots.push(value);
     possibleShots.splice(randomNum, 1);
-
-  }
-
-  function shootPlayer () {
-    pickShot();
-
+    
+    return possibleShots[value];
   }
 
   generatePossibleShots();
-  shootPlayer();
 
-  return {board};
+  return {board, pickShot};
 
 })();
 
