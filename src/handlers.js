@@ -1,5 +1,6 @@
 import dom from "./dom";
 import player from "./player";
+import ai from "./ai";
 
 const handlers = (() => {
   const aiGrid = document.querySelector('.grid-computer');

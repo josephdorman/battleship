@@ -75,10 +75,6 @@ const dom = (() => {
     else {
       shot.style.backgroundColor = '#AA4A44'; // red
     }
-
-    console.log(aiBoard.missed);
-    console.log(aiBoard.fleet);
-    console.log(aiBoard.isGameOver());
      
   }
 
