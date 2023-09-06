@@ -19,6 +19,11 @@ const handlers = (() => {
     const coord2 = id.slice(1, 2);
     ai.board.receiveAttack(coord1, coord2);
     dom.placeShot(coord1, coord2);
+    const aiShot = ai.pickShot().toString();
+    const coord3 = aiShot.slice(0, 1);
+    const coord4 = aiShot.slice(1, 2);
+    player.board.receiveAttack(coord3, coord4);
+    dom.placeShotPlayer(coord3, coord4);
   }
 
   function formClickHandler (value) {

@@ -28,8 +28,8 @@ const ai = (() => {
     const value = possibleShots[randomNum];
     currentShots.push(value);
     possibleShots.splice(randomNum, 1);
-    
-    return possibleShots[value];
+
+    return value;
   }
 
   generatePossibleShots();

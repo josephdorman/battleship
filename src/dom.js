@@ -78,6 +78,18 @@ const dom = (() => {
      
   }
 
+  function placeShotPlayer (coord1, coord2) {
+    const shot = document.querySelector(`[pid='${coord1}${coord2}']`);
+
+    if (playerBoard.board[coord1][coord2] !== null) {
+      shot.style.backgroundColor = '#00A36C'; // green
+    }
+    else {
+      shot.style.backgroundColor = '#AA4A44'; // red
+    }
+     
+  }
+
   function showName (value) {
     playerName.textContent = `${value}s Waters`;
   }
@@ -101,7 +113,7 @@ const dom = (() => {
   makeGrid();
   showShip();
 
-  return {playerBoard, aiBoard, placeShot, loadShipPlacement, showName, nameError, showShip, loadGameStart};
+  return {playerBoard, aiBoard, placeShot, loadShipPlacement, showName, nameError, showShip, loadGameStart, placeShotPlayer};
 
 })();
 
