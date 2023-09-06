@@ -23,11 +23,20 @@ const ai = (() => {
     console.log(possibleShots);
   }
 
-  function generateShot () {
+  function pickShot () {
+    const randomNum = Math.floor(Math.random() * possibleShots.length);
+    currentShots.push(possibleShots[randomNum]);
+    possibleShots.splice(randomNum, 1);
+
+  }
+
+  function shootPlayer () {
+    pickShot();
 
   }
 
   generatePossibleShots();
+  shootPlayer();
 
   return {board};
 
