@@ -82,10 +82,10 @@ const dom = (() => {
     const shot = document.querySelector(`[pid='${coord1}${coord2}']`);
 
     if (playerBoard.board[coord1][coord2] !== null) {
-      shot.style.backgroundColor = '#00A36C'; // green
+      shot.style.backgroundColor = '#AA4A44'; // red
     }
     else {
-      shot.style.backgroundColor = '#AA4A44'; // red
+      shot.style.backgroundColor = '#00A36C'; // green
     }
      
   }
